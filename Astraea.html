@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Astraea (Shizuku) - 18歳の大学生、バックエンド開発志望、ロボット工学とアニメが大好き">
+  <meta name="author" content="Astraea">
+  <meta property="og:title" content="Astraea - Profile">
+  <meta property="og:description" content="バックエンド開発志望の大学生、ロボット工学とアニメが大好き">
+  <meta property="og:type" content="website">
+  <title>Astraea - Profile</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables for maintainability */
+    :root {
+      --primary-color: #ff69b4;
+      --secondary-color: #ffc0e3;
+      --accent-color: #ff8fd4;
+      --background-color: #ffffff;
+      --body-bg: linear-gradient(135deg, #ffeef8 0%, #fff5f9 50%, #ffe8f5 100%);
+      --text-color: #5a4a5f;
+      --shadow-color: rgba(255, 105, 180, 0.15);
+      --card-shadow: 0 4px 15px rgba(255, 105, 180, 0.12);
+      --card-hover-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+      --spacing-small: 20px;
+      --spacing-medium: 30px;
+      --spacing-large: 40px;
+      --border-radius-small: 12px;
+      --border-radius-medium: 16px;
+      --border-radius-large: 20px;
+      --transition-speed: 0.3s;
+    }
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      font-family: 'Baloo 2', cursive, sans-serif;
+      color: var(--text-color);
+      background: var(--body-bg);
+      background-attachment: fixed;
+    }
+
+    /* Header styles */
+    header {
+      width: 100%;
+      background-color: var(--background-color);
+      padding: 0;
+      box-shadow: var(--card-shadow);
+      border-bottom: 4px solid var(--secondary-color);
+    }
+
+    header img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid rgba(255, 192, 227, 0.5);
+    }
+
+    /* Main content container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: var(--spacing-medium);
+      padding: var(--spacing-large);
+    }
+
+    /* Social media sidebar */
+    .social-sidebar {
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
+    .social-link {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-medium);
+      background: linear-gradient(135deg, #ffffff, #fff5f9);
+      box-shadow: 0 2px 10px var(--shadow-color);
+      border: 2px solid rgba(255, 192, 227, 0.2);
+      transition: all var(--transition-speed) ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: var(--card-hover-shadow);
+      border-color: var(--secondary-color);
+    }
+
+    .social-link img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Section styles */
+    section {
+      background-color: var(--background-color);
+      border-radius: var(--border-radius-large);
+      padding: var(--spacing-large);
+      margin-bottom: var(--spacing-medium);
+      box-shadow: var(--card-shadow);
+      border: 2px solid rgba(255, 192, 227, 0.3);
+      transition: all var(--transition-speed) ease;
+    }
+
+    section:hover {
+      box-shadow: var(--card-hover-shadow);
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      padding: var(--spacing-medium);
+      text-align: left;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      padding-bottom: var(--spacing-medium);
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, var(--secondary-color), var(--primary-color)) 1;
+      margin-bottom: var(--spacing-medium);
+      font-weight: 600;
+    }
+
+    /* Profile section */
+    .profile-content {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-large);
+      flex-wrap: wrap;
+    }
+
+    .profile-text {
+      flex: 1;
+      min-width: 300px;
+      line-height: 1.8;
+    }
+
+    .profile-text p {
+      background: linear-gradient(135deg, rgba(255, 192, 227, 0.1), rgba(255, 255, 255, 0.5));
+      padding: 20px;
+      border-radius: var(--border-radius-medium);
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .profile-image {
+      width: 300px;
+      height: auto;
+      border-radius: var(--border-radius-large);
+      box-shadow: var(--card-shadow);
+      flex-shrink: 0;
+      border: 4px solid var(--secondary-color);
+      transition: all var(--transition-speed) ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.02);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    /* Icon grid for IDE/CAD section */
+    .icon-grid {
+      display: flex;
+      gap: var(--spacing-small);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* IDE section - keep all icons in one line */
+    section[aria-labelledby="tools-heading"] .icon-grid {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    /* Scrollbar for IDE section */
+    section[aria-labelledby="tools-heading"] .icon-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    section[aria-labelledby="tools-heading"] .icon-grid::-webkit-scrollbar-track {
+      background: rgba(255, 192, 227, 0.2);
+      border-radius: 10px;
+    }
+
+    section[aria-labelledby="tools-heading"] .icon-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      border-radius: 10px;
+    }
+
+    section[aria-labelledby="tools-heading"] .icon-grid::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    }
+
+    .icon-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-card {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-medium);
+      background: linear-gradient(135deg, #ffffff, #fff5f9);
+      box-shadow: 0 2px 10px var(--shadow-color);
+      border: 2px solid rgba(255, 192, 227, 0.2);
+      transition: all var(--transition-speed) ease;
+    }
+
+    .icon-card:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: var(--card-hover-shadow);
+      border-color: var(--secondary-color);
+    }
+
+    .icon-card img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .icon-name {
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      max-width: 120px;
+    }
+
+    /* Language icon colors */
+    a[href*="java.com"] .icon-card img {
+      filter: invert(23%) sepia(98%) saturate(6962%) hue-rotate(358deg) brightness(100%) contrast(115%);
+    }
+
+    a[href*="python.org"] .icon-card img {
+      filter: invert(47%) sepia(80%) saturate(1583%) hue-rotate(170deg) brightness(94%) contrast(101%);
+    }
+
+    a[href*="kotlinlang"] .icon-card img {
+      filter: invert(38%) sepia(77%) saturate(3280%) hue-rotate(238deg) brightness(99%) contrast(103%);
+    }
+
+    a[href*="javascript"] .icon-card img {
+      filter: invert(88%) sepia(57%) saturate(3639%) hue-rotate(358deg) brightness(101%) contrast(98%);
+    }
+
+    /* IDE icon colors */
+    a[href*="idea"] .icon-card img {
+      filter: invert(13%) sepia(94%) saturate(7471%) hue-rotate(327deg) brightness(88%) contrast(113%);
+    }
+
+    a[href*="pycharm"] .icon-card img {
+      filter: invert(89%) sepia(51%) saturate(2258%) hue-rotate(24deg) brightness(102%) contrast(99%);
+    }
+
+    a[href*="visualstudio"] .icon-card img {
+      filter: invert(43%) sepia(96%) saturate(1464%) hue-rotate(188deg) brightness(99%) contrast(101%);
+    }
+
+    /* CAD software icon colors */
+    a[href*="autocad"] .icon-card img {
+      filter: invert(20%) sepia(91%) saturate(3026%) hue-rotate(343deg) brightness(95%) contrast(105%);
+    }
+
+    a[href*="solidworks"] .icon-card img {
+      filter: invert(21%) sepia(89%) saturate(5437%) hue-rotate(354deg) brightness(96%) contrast(93%);
+    }
+
+    a[href*="3ds-max"] .icon-card img {
+      filter: invert(49%) sepia(77%) saturate(3665%) hue-rotate(163deg) brightness(99%) contrast(101%);
+    }
+
+    /* Social media icon colors - All pink! */
+    .social-link img {
+      filter: invert(64%) sepia(76%) saturate(2530%) hue-rotate(296deg) brightness(100%) contrast(101%);
+      transition: filter var(--transition-speed) ease;
+    }
+
+    .social-link:hover img {
+      filter: invert(49%) sepia(89%) saturate(4253%) hue-rotate(314deg) brightness(100%) contrast(101%);
+    }
+
+    /* Music section */
+    .music-description {
+      margin-bottom: var(--spacing-medium);
+      font-size: 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--secondary-color), rgba(255, 192, 227, 0.3));
+      padding: 10px 20px;
+      border-radius: var(--border-radius-small);
+      border: 2px solid rgba(255, 192, 227, 0.4);
+    }
+
+    .music-grid {
+      display: flex;
+      gap: var(--spacing-small);
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    /* Cute scrollbar */
+    .music-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .music-grid::-webkit-scrollbar-track {
+      background: rgba(255, 192, 227, 0.2);
+      border-radius: 10px;
+    }
+
+    .music-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      border-radius: 10px;
+    }
+
+    .music-grid::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    }
+
+    .music-card {
+      width: 200px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-medium);
+      background: linear-gradient(135deg, #ffffff, #fff5f9);
+      box-shadow: 0 4px 12px var(--shadow-color);
+      border: 3px solid rgba(255, 192, 227, 0.3);
+      transition: all var(--transition-speed) ease;
+      overflow: hidden;
+    }
+
+    .music-card:hover {
+      transform: scale(1.08) translateY(-5px);
+      box-shadow: var(--card-hover-shadow);
+      border-color: var(--accent-color);
+    }
+
+    .music-card img {
+      width: 185px;
+      height: 105px;
+      border-radius: var(--border-radius-small);
+      object-fit: cover;
+      transition: all var(--transition-speed) ease;
+    }
+
+    .music-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Anime section - wider cards with horizontal stretch */
+    section[aria-labelledby="anime-heading"] .music-card {
+      width: 280px;
+      height: 120px;
+    }
+
+    section[aria-labelledby="anime-heading"] .music-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    /* Game section - 3 games per line */
+    .game-grid {
+      display: flex;
+      gap: var(--spacing-small);
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      max-width: 660px;
+    }
+
+    /* Link styles */
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--transition-speed) ease;
+    }
+
+    a:focus {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 4px;
+      border-radius: var(--border-radius-small);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 4px;
+    }
+
+    /* Cute animations */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .icon-wrapper:hover {
+      animation: float 0.6s ease-in-out;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      body {
+        font-size: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        padding: var(--spacing-small);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        flex-direction: column;
+        padding: var(--spacing-small);
+      }
+
+      .social-sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        order: -1;
+        flex-wrap: wrap;
+      }
+
+      .social-wrapper {
+        gap: 5px;
+      }
+
+      section {
+        padding: var(--spacing-medium);
+      }
+
+      .profile-content {
+        flex-direction: column;
+        gap: var(--spacing-medium);
+      }
+
+      .profile-image {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      header img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .music-card {
+        width: 160px;
+        height: 95px;
+      }
+
+      .music-card img {
+        width: 150px;
+        height: 85px;
+      }
+    }
+
+    /* Accessibility improvements */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Cute custom cursor */
+    body {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">✨</text></svg>'), auto;
+    }
+
+    a, button, .icon-card, .music-card {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">💖</text></svg>'), pointer;
+    }
+
+    /* Cute page scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 192, 227, 0.2);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--secondary-color), var(--primary-color));
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    }
+
+    /* Floating hearts animation */
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .floating-heart {
+      position: fixed;
+      font-size: 30px;
+      animation: float-up 15s infinite ease-in;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Sparkle effect */
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 20px;
+      animation: sparkle 2s infinite;
+      pointer-events: none;
+    }
+
+    /* Bounce animation for sections */
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    section {
+      animation: bounce-in 0.6s ease-out;
+    }
+
+    /* Wiggle animation for icons */
+    @keyframes wiggle {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-5deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    .icon-card:hover, .social-link:hover {
+      animation: wiggle 0.5s ease-in-out;
+    }
+
+    /* Pulse animation for headers */
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+      }
+    }
+
+    h1, h2 {
+      animation: pulse-glow 3s infinite;
+    }
+
+    /* Floating animation enhancement */
+    @keyframes float-gentle {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .music-card:hover {
+      animation: float-gentle 1s ease-in-out infinite;
+    }
+
+    /* Rainbow border animation for profile image */
+    @keyframes rainbow-border {
+      0% {
+        border-color: var(--primary-color);
+      }
+      25% {
+        border-color: var(--accent-color);
+      }
+      50% {
+        border-color: var(--secondary-color);
+      }
+      75% {
+        border-color: #ff8fd4;
+      }
+      100% {
+        border-color: var(--primary-color);
+      }
+    }
+
+    .profile-image {
+      animation: rainbow-border 3s infinite;
+    }
+
+    /* Cute star decorations */
+    .star-decoration {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.6;
+      animation: sparkle 3s infinite;
+      pointer-events: none;
+    }
+
+    section {
+      position: relative;
+      overflow: visible;
+    }
+
+    section::before,
+    section::after {
+      content: '✨';
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.7;
+      animation: sparkle 2s infinite;
+      pointer-events: none;
+    }
+
+    section::before {
+      top: -10px;
+      left: -10px;
+      animation-delay: 0s;
+    }
+
+    section::after {
+      bottom: -10px;
+      right: -10px;
+      animation-delay: 1s;
+    }
+
+    /* Cute shadow effects */
+    .icon-card, .music-card, .social-link {
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3),
+                  0 0 0 1px rgba(255, 192, 227, 0.5);
+    }
+
+    .icon-card:hover, .music-card:hover, .social-link:hover {
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5),
+                  0 0 30px rgba(255, 143, 212, 0.3),
+                  0 0 0 2px var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with banner image -->
+  <header>
+    <img src="./Astraea_files/L.C.L.jpg" alt="L.C.L. - アニメのバナー画像" loading="lazy">
+  </header>
+
+  <!-- Container with sidebar and main content -->
+  <div class="container">
+    <!-- Social Media Sidebar -->
+    <aside class="social-sidebar">
+      <a href="https://github.com/AstraeaSZK" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub" loading="lazy">
+      </a>
+      <a href="https://twitter.com/AstraeaSZK" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg" alt="X (Twitter)" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/astraeaszk/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://discord.com/users/Astraeaszk" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/discord.svg" alt="Discord" loading="lazy">
+      </a>
+      <a href="https://line.me/ti/p/astraeaszk" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LINE">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/line.svg" alt="LINE" loading="lazy">
+      </a>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+      <h1><b>✨ Astraea 💖</b></h1>
+
+    <!-- Profile Section -->
+    <section aria-labelledby="profile-heading">
+      <h2 id="profile-heading">🌸 Profile 🌸</h2>
+      <div class="profile-content">
+        <div class="profile-text">
+          <p>
+            🌸 Astraea / Shizuku 🌸<br><br>
+            🎀 18歳 | 大学生 🎓<br><br>
+            💻 バックエンド開発志望 (がんばってる～⁽⁽ଘ( ˊᵕˋ )ଓ⁾⁾)<br><br>
+            🤖 メカ＆ロボットオタク | FLL / Robomaster / VEX 💫<br><br>
+            🛠️ ガンダムとLEGO作り | 3Ds MAX & Solidworks ファン 🎨<br><br>
+            📸🎬🎶 アマチュア写真・動画・音楽好き<br><br>
+            🖌️🎬 Photoshop & DaVinciで編集できます<br><br>
+            🌏 「テックオタクが世界を救う」を信奉<br><br>
+            🏠 オタクライフ = アニメ 🍥 + 漫画 📚 + 小説 📖<br><br>
+            💖 私は日本語、中国語と英語ができるよっ<br><br>
+            💖 仲良くしてね & 楽しくやろう～ にゃ～ 🐾
+          </p>
+        </div>
+        <img src="./Astraea_files/Mia Profile.jpg" alt="Astraea (Shizuku) のプロフィール写真" class="profile-image" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section aria-labelledby="languages-heading">
+      <h2 id="languages-heading">💻 Languages 💻</h2>
+      <div class="icon-grid">
+        <div class="icon-wrapper">
+          <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer" aria-label="Javaのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/oracle.svg" alt="Java ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">Java</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" aria-label="Pythonのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/python.svg" alt="Python ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">Python</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://kotlinlang.org/" target="_blank" rel="noopener noreferrer" aria-label="Kotlinのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kotlin.svg" alt="Kotlin ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">Kotlin</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="JavaScriptのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg" alt="JavaScript ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">JavaScript</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDE and CAD Tools Section -->
+    <section aria-labelledby="tools-heading">
+      <h2 id="tools-heading">🛠️ IDE | CAD 🛠️</h2>
+      <div class="icon-grid">
+        <div class="icon-wrapper">
+          <a href="https://www.jetbrains.com/ja-jp/idea/" target="_blank" rel="noopener noreferrer" aria-label="IntelliJ IDEAのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/intellijidea.svg" alt="IntelliJ IDEA ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">IntelliJ IDEA</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://www.jetbrains.com/ja-jp/pycharm/" target="_blank" rel="noopener noreferrer" aria-label="PyCharmのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pycharm.svg" alt="PyCharm ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">PyCharm</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" aria-label="Visual Studio Codeのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg" alt="VS Code ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">VS Code</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://www.autodesk.com/products/autocad/overview" target="_blank" rel="noopener noreferrer" aria-label="AutoCADのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/autocad.svg" alt="AutoCAD ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">AutoCAD</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://www.solidworks.com/" target="_blank" rel="noopener noreferrer" aria-label="SolidWorksのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dassaultsystemes.svg" alt="SolidWorks ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">SolidWorks</span>
+        </div>
+
+        <div class="icon-wrapper">
+          <a href="https://www.autodesk.com/products/3ds-max/overview" target="_blank" rel="noopener noreferrer" aria-label="3ds Maxのウェブサイトを開く">
+            <div class="icon-card">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/autodesk.svg" alt="3ds Max ロゴ" loading="lazy">
+            </div>
+          </a>
+          <span class="icon-name">3ds Max</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Section -->
+    <section aria-labelledby="music-heading">
+      <h2 id="music-heading">🎵 Music 🎵</h2>
+      <p class="music-description">🎵 大好きな音楽アルバム (いろんな音楽が好きです) 🎵</p>
+      <div class="music-grid">
+        <div class="music-card">
+          <img src="./Astraea_files/BEYOND THE TIME (メビウスの宇宙を越えて).jpg" alt="BEYOND THE TIME - メビウスの宇宙を越えて アルバムカバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="./Astraea_files/One Last kiss.jpg" alt="One Last Kiss アルバムカバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="./Astraea_files/Beautiful World.jpg" alt="Beautiful World アルバムカバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="./Astraea_files/刹那の誓い.jpg" alt="刹那の誓い アルバムカバー" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Anime Section -->
+    <section aria-labelledby="anime-heading">
+      <h2 id="anime-heading">🎬 Anime | Movie 🎬</h2>
+      <p class="music-description">🎬 大好きなアニメ作品 (ロボットアニメ最高！) 🎬</p>
+      <div class="music-grid">
+        <div class="music-card">
+          <img src="https://cs1.animestore.docomo.ne.jp/anime/2/58/59/ABAQYQ/25859_1_d2.jpg?1759715163332" alt="新世紀エヴァンゲリオン ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/8a048f7e4fb5a421e979e3e2a66ac361ed8e144925464b0e6fad586480e085ef.jpg" alt="機動戦士ガンダム ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/42fca606aabdd3fdb1362e0ce0508b5aca9041c2820613e6c0d27cd2d1c8868e.jpg" alt="機動戦士Ζガンダム ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/a0f8e38e4d7b786335962b622c8fd6efbd4dc473653c853c5b0e36e08f97c512.jpg" alt="AKIRA ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/44132fb713d49873676ae14a27274fd4286407e75051f88411cac92f816239fb.jpg" alt="鋼の錬金術師 ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1UBUu23WV0G2Pv2SXX5IKwF4INiTderkUqN9bgi2xOsIzhg6Uudsrh7xO&s" alt="BLEACH ポスター" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/c3b6922a86a3c360b347614a2aaf593bec9679b85162b6c60404166149a3443d._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/09/digital/video/merch/subs/benefit-id/m-r/Prime/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_.jpg" alt="FLCL ポスター" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Section -->
+    <section aria-labelledby="game-heading">
+      <h2 id="game-heading">🎮 Game 🎮</h2>
+      <p class="music-description">🎮 大好きなゲーム作品🎮</p>
+      <div class="music-grid">
+        <div class="music-card">
+          <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dwf31e8bcf/products/D70010000000026/heroBanner/66a1e231272eb0241d0aa0a81f9eb0416e9bd5b205759caaac71220aebdc3a84.jpg?sw=1368&strip=false" alt="ゼルダの伝説 ティアーズ オブ ザ キングダム カバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1811500/header.jpg?t=1732683342" alt="LOOPERS カバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2396980/header.jpg?t=1726036301" alt="Fate/stay night REMASTERED カバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1749053861" alt="Counter-Strike 2 カバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1943950/c5ecb6ccafea6eb86d1ab6413f452eb07dcee27f/header.jpg?t=1763644492" alt="Escape the Backrooms カバー" loading="lazy">
+        </div>
+        <div class="music-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1748630546" alt="ELDEN RING カバー" loading="lazy">
+        </div>
+      </div>
+    </section>
+    </main>
+  </div>
+
+  <!-- Floating hearts decorations -->
+  <div class="floating-heart" style="left: 10%; animation-delay: 0s;">💖</div>
+  <div class="floating-heart" style="left: 25%; animation-delay: 3s;">💗</div>
+  <div class="floating-heart" style="left: 45%; animation-delay: 6s;">💕</div>
+  <div class="floating-heart" style="left: 60%; animation-delay: 9s;">💖</div>
+  <div class="floating-heart" style="left: 80%; animation-delay: 12s;">💗</div>
+  <div class="floating-heart" style="left: 90%; animation-delay: 2s;">✨</div>
+  <div class="floating-heart" style="left: 15%; animation-delay: 7s;">🌸</div>
+  <div class="floating-heart" style="left: 70%; animation-delay: 4s;">⭐</div>
+
+
+</body>
+</html>
